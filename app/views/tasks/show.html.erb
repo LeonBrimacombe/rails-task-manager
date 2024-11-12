@@ -1,0 +1,28 @@
+<div class="container">
+   <div class="row justify-content-md-center d-flex justify-content-between">
+     <div class="col-6 mt-3">
+       <h2> <%= @task.title %> </h2>
+     </div>
+     <div class="text-center mt-4">
+        <%= button_to "✏️ Edit task", edit_task_path(@task) %> <br>
+      </div>
+   </div>
+
+   <div class="row justify-content-md-center">
+     <div class="col-6 shadow p-3 m-4 bg-white rounded text-center align-self-center">
+       <p> <%= @task.details %> </p>
+     </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+     <div class="col-6">
+       <% if @task.completed %>
+       <p><%= @task.title %> is completed! Good job!</p>
+       <% else %>
+       <p><%= @task.title %> is not yet complete...</p>
+       <% end %>
+     </div>
+   </div>
+   <%= link_to "🔍 View all tasks", tasks_path %>
+  </div>
+</div>
